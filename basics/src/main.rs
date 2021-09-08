@@ -1,3 +1,5 @@
+//#![deny(unused_must_use)]
+
 mod data_models;
 use data_models::{Character, CharacterBuilder, Enemy, PoisonResult};
 use rand::Rng;
@@ -83,11 +85,11 @@ fn main() {
         name: "Jerk".to_string(),
     };
 
-    let mug_result = mug_enemy(&mut enemy_1, &player_3);
-    match mug_result {
-        Ok(damage) => println!("{} did {} damage!", player_3.name, damage),
-        Err(err_message) => println!("Mug failed: {}", err_message),
-    }
+    mug_enemy(&mut enemy_1, &player_3);
+    // match mug_result {
+    //     Ok(damage) => println!("{} did {} damage!", player_3.name, damage),
+    //     Err(err_message) => println!("Mug failed: {}", err_message),
+    // }    
 
     /*
     
